@@ -5,18 +5,18 @@ CREATE DATABASE manage_employeesDB;
 USE manage_employeesDB;
 
 CREATE TABLE employee(
-   id INT(11) AUTO_INCREMENT NOT NULL,
+   id INT AUTO_INCREMENT NOT NULL,
    first_name VARCHAR(30),
    last_name VARCHAR(30),
-   role_id INT(11) NOT NULL,
-   manager_id  INT(11) NULL,
+   role_id INT NOT NULL,
+   manager_id  INT NULL,
    PRIMARY KEY (id)
 
 );
 
 CREATE TABLE department(
 id  INT PRIMARY KEY,
-name  VARCHAR(30) --holds department name
+name  VARCHAR(30)  
 );
 
 CREATE TABLE role(
@@ -24,5 +24,5 @@ CREATE TABLE role(
     title VARCHAR(30),
     salary DECIMAL,
     department_id INT
-)
+);
 
