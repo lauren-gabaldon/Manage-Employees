@@ -4,18 +4,8 @@ CREATE DATABASE manage_employeesDB;
 
 USE manage_employeesDB;
 
-CREATE TABLE employee(
-   id INT AUTO_INCREMENT NOT NULL,
-   first_name VARCHAR(30),
-   last_name VARCHAR(30),
-   role_id INT NOT NULL,
-   manager_id  INT NULL,
-   PRIMARY KEY (id)
-
-);
-
 CREATE TABLE department(
-id  INT PRIMARY KEY,
+id  INT AUTO_INCREMENT PRIMARY KEY,
 name  VARCHAR(30)  
 );
 
@@ -24,5 +14,15 @@ CREATE TABLE role(
     title VARCHAR(30),
     salary DECIMAL,
     department_id INT
+);
+
+CREATE TABLE employee(
+   id INT AUTO_INCREMENT NOT NULL,
+   first_name VARCHAR(30),
+   last_name VARCHAR(30),
+   role_id INT,
+   manager_id  INT NULL,
+   PRIMARY KEY (id),
+   FOREIGN KEY (role_id) REFERENCES role(id)
 );
 
